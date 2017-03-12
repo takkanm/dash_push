@@ -69,7 +69,14 @@ module DashPush
   class Button
     def initialize(mac_address, params)
       @mac_address = mac_address
+      @button      = Dashed::Button.new(@mac_address, DashPush.network_device_name)
       @action      = ActionBuilder.setup(params)
+    end
+
+    def ready!
+      @button.on_press do
+        push!
+      end
     end
 
     def push!
