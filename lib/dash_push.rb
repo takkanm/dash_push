@@ -2,6 +2,16 @@ require "dash_push/version"
 require 'httpclient'
 
 module DashPush
+  class << self
+    def network_device_name=(device)
+      @network_device_name = device
+    end
+
+    def network_device_name
+      @network_device_name || ENV['DASH_PUSH_DEVICE_NAME']
+    end
+  end
+
   class ActionBuilder
     def self.setup(params)
       case params['action']
