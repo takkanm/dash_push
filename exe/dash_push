@@ -5,7 +5,7 @@ require_relative '../lib/dash_push'
 params = YAML.load_file(ARGV[0])
 
 buttons = params.map { |mac_address, params|
-	DashPush::Button.new(mac_address, params)
+  DashPush::Button.new(mac_address, params)
 }
 
 buttons.each(&:ready!)
