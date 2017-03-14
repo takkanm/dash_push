@@ -1,6 +1,6 @@
 #! /usr/bin/env ruby
 require 'yaml'
-require_relative 'lib/dash_push'
+require_relative '../lib/dash_push'
 
 params = YAML.parse_file(ARGV[0])
 

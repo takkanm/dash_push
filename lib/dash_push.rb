@@ -1,4 +1,5 @@
 require "dash_push/version"
+require 'dashed'
 require 'httpclient'
 
 module DashPush
